@@ -1,0 +1,50 @@
+<title>List Polls</title>
+<div ng-controller = "userController" class="container col-sm-12">
+  <div ng-controller = "pollController" class="well">
+    <div class="row">
+      <div class="control-group col-sm-2 col-sm-offset-9">
+        <!-- Button -->
+        <div class="controls">
+          <a href="#!/create"><button class="btn btn-primary">Create a New Poll</button></a>
+        </div>
+      </div>
+      <div class="control-group col-sm-1">
+        <!-- Button -->
+        <div class="controls">
+          <a href="/logout"><button class="btn btn-primary">Logout</button></a>
+        </div>
+      </div>
+    </div><!-- row ends header-->
+    <legend class="">Current Polls: </legend>
+    <div class="row">
+      <div class="col-sm-9"></div>
+      <div class="col-sm-3">
+        <div class="controls">
+          <input ng-model="search.question" placeholder="Search" class="form-control input-xlarge">
+        </div>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col-sm-12 table-responsiv">
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Survey Question</th>
+              <th>Date Posted</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat = "survey in surveys | filter: search.question | orderBy:sortBy:sortReverse">
+              <td>{{ survey._user }}</td>
+              <td><a href="#!/poll/{{survey._id}}" >{{ survey.question }}</a></td>
+              <td>{{ survey.createdAt | date:'mediumDate' }}</td>
+              <td><button class='btn btn-danger' ng-if="curUser.name == survey._user" ng-click="deleteSurvey(survey._id)">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div><!-- Row ends here-->
+  </div><!-- well ends here-->
+</div> <!-- container 1 ends here -->

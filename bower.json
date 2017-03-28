@@ -1,0 +1,21 @@
+{
+  "name": "exam_1",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "ilyaz <ilyazbei@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/ilyazbei/Coding-Dojo",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-route": "^1.6.3"
+  }
+}

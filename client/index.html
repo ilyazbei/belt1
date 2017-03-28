@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <title>LogReg</title> -->
+    <!-- Files from bower_components and client folders can only be served
+    if the static folders are being served on the server with app.use() -->
+    <script src="angular/angular.js"></script>
+    <script src="angular-route/angular-route.js"></script>
+    <!-- End Bower Components -->
+
+    <!-- START angular application code -->
+    <script src="app.js" charset="utf-8"></script>
+    <script src="./controllers/userController.js"></script>
+    <script src="./factories/userFactory.js"></script>
+    <script src="./controllers/pollController.js"></script>
+    <script src="./factories/pollFactory.js"></script>
+    <!-- END your angular application code -->
+
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <!-- define ng-app!!! -->
+  <body>
+    <div ng-view=""></div>
+  </body>
+</html>
